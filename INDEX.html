@@ -86,14 +86,41 @@
 
 
                          </style>
+                  </table>
+                  <hr>
+                  <h4>algorithm of linear algebra</h4>
+                  <blockquote cite="https://en.wikipedia.org/wiki/Euler%27s_totient_function#History,_terminology,_and_notation">Leonhard Euler introduced the function in 1763.[7][8][9] However, 
+                    he did not at that time choose any specific symbol to denote it.
+                     In a 1784 publication, Euler studied the function further, choosing the Greek letter π to denote it: he wrote πD for "the multitude of numbers less than D, 
+                     and which have no common divisor with it".
+                      This definition varies from the current definition for the totient function at D = 1 
+                      but is otherwise the same. The now-standard notation[8][11] φ(A) comes from Gauss's 1801 treatise Disquisitiones Arithmeticae,
+                      [12][13] although Gauss didn't use parentheses around the argument and wrote φA. 
+                    Thus, it is often called Euler's phi function or simply the phi function.. </blockquote>
+                  <a href="https://en.wikipedia.org/wiki/Euler%27s_totient_function#History,_terminology,_and_notation">reference of description</a>
 
-
-
-
-
-
-
-                     </table>
+                  <pre>
+                      int phi(int n) {
+                    int result = n;
+                    for (int i = 2; i * i <= n; i++) {
+                        if (n % i == 0) {
+                            while (n % i == 0)
+                                n /= i;
+                            result -= result / i;
+                        }
+                    }
+                    if (n > 1)
+                        result -= result / n;
+                    return result;
+                }
+                      
+                        </pre>
+                        <a href="https://cp-algorithms.com/algebra/phi-function.html">reference for the algorithm</a>
+                        
+                    
+                
+                
+                  
                     
 
          </body>
